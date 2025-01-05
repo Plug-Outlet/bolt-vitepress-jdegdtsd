@@ -1,0 +1,24 @@
+:root {
+  --vp-c-bg: #1f232a;
+  --vp-c-bg-soft: #2c313c;
+  --vp-c-bg-alt: #242832;
+  --vp-c-border: #2c313c;
+  --vp-c-divider: #2c313c;
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #a8b2c3;
+  --vp-c-brand: #00e5ff;
+  --vp-c-brand-dark: #00b8d4;
+  --vp-c-brand-light: #40e9ff;
+  --vp-c-brand-lighter: #80efff;
+  --vp-c-brand-dark: #00b8d4;
+  --vp-c-brand-darker: #008ba1;
+  
+  --vp-custom-block-info-bg: rgba(0, 229, 255, 0.1);
+  --vp-custom-block-info-border: var(--vp-c-brand);
+  --vp-custom-block-tip-bg: rgba(0, 229, 255, 0.1);
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-warning-bg: rgba(255, 197, 23, 0.1);
+  --vp-custom-block-warning-border: #ffc517;
+  --vp-custom-block-danger-bg: rgba(255, 70, 66, 0.1);
+  --vp-custom-block-danger-border: #ff4642;
+}

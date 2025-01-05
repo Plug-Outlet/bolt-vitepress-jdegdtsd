@@ -1,0 +1,44 @@
+/* Custom Styles */
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.title-container h1 {
+  margin: 0;
+  background: linear-gradient(120deg, var(--vp-c-brand), var(--vp-c-brand-lighter));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  background: linear-gradient(120deg, var(--vp-c-brand) 0%, var(--vp-c-brand-lighter) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Enhanced Link Styles */
+.vp-doc a {
+  text-decoration: none;
+  background: linear-gradient(to right, var(--vp-c-brand), var(--vp-c-brand));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.vp-doc a:hover {
+  background-size: 100% 2px;
+}
