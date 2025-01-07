@@ -1,11 +1,27 @@
-<!-- CookieAnatomy.vue -->
+<!-- CookieAnatomy.vue - Visual representation of cookie structure -->
+<script setup lang="ts">
+const cookieFields = {
+  'Name': 'Cookie identifier',
+  'Value': 'Encoded data/token',
+  'Domain': 'Cookie scope',
+  'Path': 'URL path scope',
+  'Expires': 'Expiration date',
+  'Secure': 'HTTPS only flag',
+  'HttpOnly': 'JS access restriction'
+}
+</script>
+
 <template>
   <div class="cookie-anatomy">
     <div class="anatomy-card">
       <h3>Basic Structure</h3>
       <code class="cookie-code">name=value; domain=example.com; path=/; expires=date; secure; httpOnly</code>
       <div class="anatomy-grid">
-        <div class="anatomy-item" v-for="(desc, key) in cookieFields" :key="key">
+        <div 
+          v-for="(desc, key) in cookieFields" 
+          :key="key"
+          class="anatomy-item"
+        >
           <span class="label">{{ key }}</span>
           <span class="value">{{ desc }}</span>
         </div>
@@ -13,15 +29,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-const cookieFields = {
-  'Name': 'Cookie identifier',
-  'Value': 'Encoded data/token',
-  'Domain': 'Cookie scope',
-  'Path': 'URL path scope'
-}
-</script>
 
 <style scoped>
 .cookie-anatomy {

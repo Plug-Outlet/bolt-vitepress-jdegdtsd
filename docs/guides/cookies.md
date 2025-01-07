@@ -1,9 +1,7 @@
-<!-- Main cookie guide page -->
 <script setup>
-import CookieAnatomy from '../../components/cookies/CookieAnatomy.vue'
-import CookieTypes from '../../components/cookies/CookieTypes.vue'
-import SecurityAttributes from '../../components/cookies/SecurityAttributes.vue'
-import ResourceCard from '../../components/cookies/ResourceCard.vue'
+import CookieAnatomy from '../components/cookies/CookieAnatomy.vue'
+import CookieTypes from '../components/cookies/CookieTypes.vue'
+import SecurityAttributes from '../components/cookies/SecurityAttributes.vue'
 </script>
 
 <div class="guide-container">
@@ -24,47 +22,6 @@ import ResourceCard from '../../components/cookies/ResourceCard.vue'
       <SecurityAttributes />
     </AccordionItem>
   </div>
-
-  <AccordionItem type="cyber" title="Analysis Resources" icon="🔧" status="TOOLS">
-    <div class="resources-grid">
-      <ResourceCard
-        title="Cookie-Editor"
-        description="Browser extension for viewing, editing and creating cookies"
-        url="https://cookie-editor.cgagnier.ca/"
-        icon="🔍"
-      />
-      <ResourceCard
-        title="EditThisCookie"
-        description="Premium cookie manager with advanced features"
-        url="https://www.editthiscookie.com/"
-        icon="✏️"
-      />
-      <ResourceCard
-        title="Cookie Quick Manager"
-        description="Firefox add-on for cookie management and analysis"
-        url="https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager/"
-        icon="🦊"
-      />
-      <ResourceCard
-        title="CookieServe"
-        description="Online cookie parser and analyzer"
-        url="https://cookieserve.com/"
-        icon="🌐"
-      />
-      <ResourceCard
-        title="Cookie Converter"
-        description="Convert between Netscape and JSON cookie formats"
-        url="https://github.com/dandv/convert-chrome-cookies"
-        icon="🔄"
-      />
-      <ResourceCard
-        title="Cookie Analyzer"
-        description="Advanced cookie security and compliance analysis"
-        url="https://cookiemetrix.com/"
-        icon="🔒"
-      />
-    </div>
-  </AccordionItem>
 </div>
 
 <style>
@@ -117,13 +74,6 @@ import ResourceCard from '../../components/cookies/ResourceCard.vue'
 .cookie-sections {
   display: grid;
   gap: 2rem;
-}
-
-.resources-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
 }
 
 @keyframes gridScroll {

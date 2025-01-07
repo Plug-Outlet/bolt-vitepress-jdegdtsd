@@ -4,56 +4,37 @@
     <div class="neon-text">TOKEN EXTRACTION</div>
     <div class="cyber-line"></div>
   </div>
-  <TokenScanner ref="scanner" @token-found="handleTokenFound" />
-  <TokenInput 
-    v-if="showInput"
-    @token-submitted="handleTokenSubmit"
-    @close="showInput = false"
-  />
 
-  <div class="button-group">
-    <button class="cyber-button" @click="startScan">
-      <span class="button-icon">🔍</span>
-      Scan for Tokens
-    </button>
-    <button class="cyber-button" @click="showInput = !showInput">
-      <span class="button-icon">✏️</span>
-      Enter Token
-    </button>
-  </div>
-  <TokenDecoder 
-    ref="decoder"
-    :token="currentToken"
-    @decode-complete="handleDecodeComplete"
-  />
+  <AccordionItem type="cyber" title="Webhook Examples" icon="🔗" status="DEMO">
+    <div class="webhook-examples">
+      <div class="example-card">
+        <h3>Discord Webhook</h3>
+        <code class="webhook-url">https://discord.com/api/webhooks/...</code>
+        <button class="demo-button">Test Discord</button>
+      </div>
+      <div class="example-card">
+        <h3>Telegram Bot</h3>
+        <code class="webhook-url">https://api.telegram.org/bot[TOKEN]/sendMessage</code>
+        <button class="demo-button">Test Telegram</button>
+      </div>
+      <div class="example-card">
+        <h3>Custom Webhook</h3>
+        <code class="webhook-url">https://api.example.com/webhook</code>
+        <button class="demo-button">Test Custom</button>
+      </div>
+    </div>
+  </AccordionItem>
+
+  <AccordionItem type="neon" title="Telegram Bot Examples" icon="🤖" status="ACTIVE">
+    <div class="code-examples">
+      <div class="code-card">
+        <h3>Send Message</h3>
+        <pre><code class="language-python"></code></pre>
+      </div>
+      <!-- Other code examples remain the same -->
+    </div>
+  </AccordionItem>
 </div>
-
-<script setup>
-import { ref } from 'vue'
-
-const scanner = ref(null)
-const decoder = ref(null)
-const showInput = ref(false)
-const currentToken = ref('')
-
-const startScan = async () => {
-  currentToken.value = ''
-  await scanner.value?.scanForTokens()
-}
-
-const handleTokenFound = (token) => {
-  currentToken.value = token
-}
-
-const handleTokenSubmit = (token) => {
-  currentToken.value = token
-  showInput.value = false
-}
-
-const handleDecodeComplete = () => {
-  // Handle decode completion if needed
-}
-</script>
 
 <style>
 .guide-container {
@@ -78,57 +59,75 @@ const handleDecodeComplete = () => {
   animation: gridScroll 20s linear infinite;
 }
 
-.guide-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.neon-text {
-  font-size: 3rem;
-  color: #00ff00;
-  text-shadow: 
-    0 0 5px #00ff00,
-    0 0 10px #00ff00,
-    0 0 20px #00ff00;
-  margin: 0;
-}
-
-.cyber-line {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00ff00, transparent);
-  margin: 2rem auto;
-  width: 200px;
-}
-
-.button-group {
-  display: flex;
-  gap: 1rem;
+.webhook-examples {
+  display: grid;
+  gap: 1.5rem;
   margin: 1rem 0;
 }
 
-.cyber-button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+.example-card {
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid #00ff00;
   border-radius: 0.5rem;
-  color: #00ff00;
-  font-family: monospace;
-  cursor: pointer;
+  padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
-.cyber-button:hover {
-  background: rgba(0, 255, 0, 0.1);
-  transform: translateY(-2px);
+.example-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
 }
 
-.button-icon {
-  font-size: 1.2rem;
+.webhook-url {
+  display: block;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+  color: #00ff00;
+  font-family: monospace;
+  margin: 1rem 0;
+}
+
+.demo-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid #00ff00;
+  border-radius: 0.5rem;
+  color: #00ff00;
+  cursor: pointer;
+  font-family: monospace;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 255, 0, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: buttonShine 3s infinite;
+}
+
+.demo-button:hover {
+  background: rgba(0, 255, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+@keyframes buttonShine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
 }
 
 @keyframes gridScroll {

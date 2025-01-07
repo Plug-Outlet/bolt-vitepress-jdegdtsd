@@ -17,7 +17,6 @@
         <span class="label">Website</span>
         <WebsiteMetadata url="[WEBSITE_URL]" />
       </div>
-
       <!-- Tags -->
       <div class="info-item">
         <span class="label">Tags</span>
@@ -27,7 +26,6 @@
           <span class="tag">[TAG3]</span>
         </div>
       </div>
-
       <!-- Categories -->
       <div class="info-item">
         <span class="label">Categories</span>
@@ -36,7 +34,6 @@
           <span class="category">[CATEGORY2]</span>
         </div>
       </div>
-
       <!-- Payment Methods -->
       <div class="info-item">
         <span class="label">Payment Methods</span>
@@ -52,7 +49,6 @@
           <!-- Add more payment methods as needed -->
         </div>
       </div>
-
       <!-- Security Info -->
       <div class="info-item">
         <span class="label">Security Level</span>
@@ -61,7 +57,6 @@
           <span class="level-text">MEDIUM</span>
         </div>
       </div>
-
       <!-- Region -->
       <div class="info-item">
         <span class="label">Region</span>

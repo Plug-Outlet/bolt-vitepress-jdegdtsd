@@ -1,18 +1,5 @@
-<!-- SecurityAttributes.vue -->
-<template>
-  <div class="security-grid">
-    <div v-for="attr in securityAttributes" :key="attr.title" class="security-card">
-      <h3>{{ attr.title }}</h3>
-      <p>{{ attr.description }}</p>
-      <div :class="['security-indicator', attr.level]">
-        <span class="icon">{{ attr.icon }}</span>
-        <span class="status">{{ attr.status }}</span>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script setup>
+<!-- SecurityAttributes.vue - Cookie security attributes and their importance -->
+<script setup lang="ts">
 const securityAttributes = [
   {
     title: 'Secure Flag',
@@ -38,6 +25,23 @@ const securityAttributes = [
 ]
 </script>
 
+<template>
+  <div class="security-grid">
+    <div 
+      v-for="attr in securityAttributes" 
+      :key="attr.title" 
+      class="security-card"
+    >
+      <h3>{{ attr.title }}</h3>
+      <p>{{ attr.description }}</p>
+      <div :class="['security-indicator', attr.level]">
+        <span class="icon">{{ attr.icon }}</span>
+        <span class="status">{{ attr.status }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
 <style scoped>
 .security-grid {
   display: grid;
@@ -46,14 +50,15 @@ const securityAttributes = [
 }
 
 .security-card {
-  padding: 1rem;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
-  border: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .security-card h3 {
-  color: #ff0000;
+  color: #00e5ff;
   margin: 0 0 0.5rem 0;
 }
 
@@ -85,9 +90,5 @@ const securityAttributes = [
 .security-indicator.warning {
   background: rgba(255, 255, 0, 0.1);
   border: 1px solid rgba(255, 255, 0, 0.2);
-}
-
-.security-indicator .status {
-  color: inherit;
 }
 </style>
